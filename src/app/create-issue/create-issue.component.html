@@ -1,0 +1,21 @@
+<div class="container col-lg-4 col-md-4 col-12 shadow p-2 mt-4">
+    <h2 class="text-center text-primary p-1"> Create Issue</h2>
+    <form ngForm="#issueForm" ngNativeValidate (ngSubmit)="addIssue()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title <sup class="text-danger">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="addTitle" [(ngModel)]="addIssueDetails.title" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description  <sup class="text-danger">*</sup></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="addDescription" rows="3" [(ngModel)]="addIssueDetails.description" required></textarea>
+        </div>
+        <div class="text-center p-2">
+
+            <button type="submit" class="btn btn-outline-primary mx-1">Add </button>
+
+            <button type="button" class="btn btn-success" (click)="submit()" [disabled]="this.listOfIssues.length==0">Submit </button>
+
+
+        </div>
+    </form>
+</div>
